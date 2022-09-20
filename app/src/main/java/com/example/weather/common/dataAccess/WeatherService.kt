@@ -1,6 +1,6 @@
 package com.example.weather.common.dataAccess
 
-import com.example.weather.common.WeatherForecastEntity
+import com.example.weather.common.entities.WeatherForecastEntity
 import com.example.weather.common.utils.Constants
 import retrofit2.http.GET
 import retrofit2.http.Query
