@@ -5,7 +5,7 @@ object Constants {
     const val ONE_CALL_PATH = "data/3.0/onecall"
 
     const val LATITUDE_PARAM = "lat"
-    const val LONGITUDE_PARAM = "log"
+    const val LONGITUDE_PARAM = "lon"
     const val APP_ID_PARAM = "appid"
     const val UNITS_PARAM = "units"
     const val LANGUAGE_PARAM = "lang"
