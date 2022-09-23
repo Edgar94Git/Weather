@@ -23,7 +23,7 @@ class ForecastAdapter(private val listener: OnClickListener) :
         val forecast = getItem(position)
 
         with(holder as ViewHolder){
-            holder.binding?.setVariable(BR.viewModel, forecast)
+            holder.binding?.setVariable(BR.forecast, forecast)
             holder.binding?.executePendingBindings()
 
             setListener(forecast)

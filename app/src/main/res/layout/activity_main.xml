@@ -8,6 +8,9 @@
         <variable
             name="viewModel"
             type="com.example.weather.mainModule.viewModel.MainViewModel" />
+        <variable
+            name="forecast"
+            type="com.example.weather.common.entities.Forecast" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
