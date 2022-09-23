@@ -9,6 +9,9 @@
         <variable
             name="current"
             type="com.example.weather.common.entities.Current" />
+        <variable
+            name="forecast"
+            type="com.example.weather.common.entities.Forecast" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,7 +27,7 @@
             android:textAppearance="?attr/textAppearanceHeadline6"
             android:textColor="?attr/colorSecondary"
             tools:text="200.4 F"
-            android:text="@{@string/weather_temp(current.temp)}"
+            android:text="@{ current != null ? @string/weather_temp(current.temp) : @string/weather_temp(forecast.temp)}"
             android:gravity="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +39,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?attr/textAppearanceBody1"
             tools:text="22:00"
-            android:text="@{@string/weather_dt(CommonUtils.INSTANCE.getHour(current.dt))}"
+            android:text="@{ current != null ? @string/weather_dt(CommonUtils.INSTANCE.getHour(current.dt)) : CommonUtils.INSTANCE.getFullDate(forecast.dt)}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -45,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Humidity: 65%"
-            android:text="@{@string/weather_humidity(current.humidity)}"
+            android:text="@{ current != null ? @string/weather_humidity(current.humidity) : @string/weather_humidity(forecast.humidity)}"
             android:textAppearance="?attr/textAppearanceOverline"
             app:layout_constraintStart_toStartOf="@id/tvDt"
             app:layout_constraintTop_toBottomOf="@id/tvDt"/>
@@ -56,7 +59,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?attr/textAppearanceBody1"
             tools:text="Clouds"
-            android:text="@{CommonUtils.INSTANCE.getWeatherMain(current.weather)}"
+            android:text="@{ current != null ? CommonUtils.INSTANCE.getWeatherMain(current.weather) : CommonUtils.INSTANCE.getWeatherMain(forecast.weather)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -66,7 +69,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?attr/textAppearanceCaption"
             tools:text="Few Clouds"
-            android:text="@{CommonUtils.INSTANCE.getWeatherDescription(current.weather)}"
+            android:text="@{ current != null ? CommonUtils.INSTANCE.getWeatherDescription(current.weather) : CommonUtils.INSTANCE.getWeatherDescription(forecast.weather)}"
             app:layout_constraintEnd_toEndOf="@id/tvMain"
             app:layout_constraintTop_toBottomOf="@id/tvMain"/>
 
