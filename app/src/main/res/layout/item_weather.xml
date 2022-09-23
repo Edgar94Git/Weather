@@ -54,6 +54,17 @@
             app:layout_constraintTop_toBottomOf="@id/tvDt"/>
 
         <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvPop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="10%"
+            android:textAppearance="?attr/textAppearanceOverline"
+            android:text="@{String.valueOf(forecast.pop)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHumidity"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvMain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

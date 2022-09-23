@@ -34,7 +34,7 @@ class ForecastAdapter(private val listener: OnClickListener) :
         val binding = DataBindingUtil.bind<ItemWeatherBinding>(view)
         fun setListener(forecast: Forecast){
             binding?.root?.setOnClickListener{
-
+                listener.onClick(forecast)
             }
         }
     }
