@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         super.onStart()
         lifecycleScope.launch {
             binding.viewModel?.getWeatherAddForecast(19.1738, -96.1342,
-            "884394befea40cd1385cf8109b488880", "metric", "en")
+            "884394befea40cd1385cf8109b488880", "hourly", "metric", "en")
         }
     }
 
